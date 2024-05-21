@@ -90,6 +90,7 @@ public class Library {
             System.out.println("Unable to open file writer");
         }
 
+        // Leggo dal file
         File libri = new File("./resources/data.txt");
         try {
             Scanner reader = new Scanner(libri);
