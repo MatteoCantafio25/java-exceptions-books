@@ -18,16 +18,18 @@ public class Library {
 
         Scanner scanner = new Scanner(System.in);
 
-        try{
+
+        try {
             System.out.print("How many books do you want to enter? ");
             numOfBooks = Integer.parseInt(scanner.nextLine());
 
             if (numOfBooks <= 0){
                 throw new IllegalArgumentException("Invalid value");
             }
-        }catch (IllegalArgumentException e){
-            System.out.println("Error: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            System.out.println("The number of books cannot be less than or equal to 0");
         }
+
 
         Book[] catalog = new Book[numOfBooks];
 
