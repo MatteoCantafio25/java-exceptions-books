@@ -1,6 +1,7 @@
 package org.lessons.excep;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
@@ -87,6 +88,18 @@ public class Library {
             fileWriter.close();
         }catch(IOException e){
             System.out.println("Unable to open file writer");
+        }
+
+        File libri = new File("./resources/data.txt");
+        try {
+            Scanner reader = new Scanner(libri);
+            while(reader.hasNextLine()){
+                String content = reader.nextLine();
+                System.out.println(content);
+            }
+            reader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to read file writer");
         }
 
         scanner.close();
